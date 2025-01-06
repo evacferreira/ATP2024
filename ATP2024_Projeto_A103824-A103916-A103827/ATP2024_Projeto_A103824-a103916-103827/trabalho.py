@@ -1,61 +1,4 @@
-# Organização do projeto:
-    #backend: funções mais básicas para o desenvolvimento da aplicação
-    #linha de comando: capaz de interagir com o utilizador no terminal do Visual Code
-    #interface: janela interativa da aplicação desenvolvida, onde o utilizador escolhe realizar determinadas ações, clicando em botões, etc.
 
-
-# funções: 
-    # carregar: tem que carregar o datset do suporte da aplicação
-    # cria_publicacao: criar um artigo com:
-        # título
-        # resumo
-        # palavras-chave, DOI (identificador único e permanente atribuído a documentos digitais,)
-        # lista de autores e sua afiliação
-        # url para o ficheiro PDF do artigo (link para o pdf)
-        # data de publicação
-        # url do artigo 
-    # eliminar_publicacao : elimina uma publicação
-    # atualiza_publicacao: atualização da informação: a data de publicação, o resumo, palavras-chave, autores e afiliações (links são permanentes logo não mudam)
-    # consulta_publicacao: pesquisa publicações. Permite filtrar por título, autor, afiliação, data de publicação e palavras-chave. 
-    # ordena_titulopublicacao: ordenar as publicações pelo titulo
-    # ordena_datapublicacao: ordenar as publicações pela data de publicação
-    
-    # listar_autoresartigos: faz uma lista com todos os autores pela frequência dos seus artigos publicados
-    # listar_autoresalfabetico: faz uma lista com todos os autores por ordem alfabética
-    # artigos_autor: lista todos os artigos do autor presente na lista da função listar_autores
-    # procura_palavra: vai dataset, cria uma lista com os artigos com essa palavra-chave
-    # várias funçoes para criar graficos de estatistica: 
-        # conta_publicacoesano: numero de publicação por ano
-        # conta_publicacaomes: numero de publicação por mês de um determinado ano
-        # conta_publicacaoautor: numero de publicações por autores (top 20)
-        # conta_publicacaoautoranos: numero de publicações de um autor por anos
-        # conta_palavrachave: palavras chave pela frequencia (top 20)
-        # palavra_mais_frequente: palavra chave mais frequente por ano
-    
-
-
-    #importar_ficheiro: carregar dados doutro ficheiro/ importar dados e adicionar aos que temos
-    #exportar_ficheiro: carregar so alguma parte dos dados para um ficheiro novo
-
-
-#adicionar:
-    #funçoes para adicipnar a pesquisa dentre de apenas um artigo de 1 so palavra
-
-#interface: 
-    # numero de publicação por ano - grafico de barras
-    # numero de publicação por mês de um determinado ano - grafico de barras
-    # numero de publicações por autores (top 20) - grafico circular
-    # numero de publicações de um autor por anos - grafico de barras
-    # palavras chave pela frequencia (top 20) - grafico circular
-    # palavra chave mais frequente por ano - fazer algo engraçado tipo a palavra mais pesquisada é por a palavra enorme
-
-
-    # temos que ter um guardar 
-    # para ordenar /filtrar, etc, abrir com pouca informação, ou seja, por exemplo, id, titulo, e depois poderes selecionar o id e abrir uma janela com o artigo todo
-
-
-
-#PROJETO:
 import json 
 import os
 import unicodedata
@@ -2254,7 +2197,7 @@ while n != 0:
 
                     if 'keywords' in publicacao:
                         print(f"** PALAVRAS-CHAVE **")
-                        print(", ".join(publicacao['keywords']))
+                        print(publicacao['keywords'])
                     if 'publish_date' in publicacao:
                         print(f"** DATA DE PUBLICAÇÃO **")
                         print(publicacao['publish_date'])
